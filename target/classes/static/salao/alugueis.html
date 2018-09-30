@@ -1,0 +1,62 @@
+<meta http-equiv="Content-Type" content="text/html; charset-utf-8">
+<style>
+    button{
+        width: 80px;
+
+    }
+    input{
+        width: 100px;
+
+    }
+    .tam1{
+        width: 32px;
+        height: 32px;
+    }
+</style>
+
+<div>
+        <h2>Aluguéis</h2>
+        <div>
+            <label for="identifier">Identificador:</label>
+                <input type="text" ng-model="aluguel.identifier" readonly="readonly" class="form-control" id="identifier" placeholder="identifier">
+            <label for="fimAnuncio">Fim do anuncio</label>
+                <input type="date" ng-model="aluguel.fimAnuncio"  class="form-control" id="fimAnuncio" placeholder="Fim do anuncio">     
+            <label for="descricao">Descricao</label>
+                <input type="text" ng-model="aluguel.descricao"  class="form-control" id="descricao" placeholder="Descricao">
+        </div>
+        
+        <br />
+        
+        <div>
+            <button class="btn btn-primary" ng-click="novo()">Novo</button>
+            <button class="btn btn-primary" ng-click="salvar()">Salvar</button>
+        </div>
+        
+        <br />
+        
+        <div>
+            <label for="filtro">Buscar</label>
+               <input type="text" ng-model="filtro" class="form-control" id="filtro">
+        </div>
+
+        <br/>
+        
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table bordered table-condesed">
+                <tr>
+                 <th style="cursor: pointer" ng-click="orderByMe('identifier')">Identificador</th>
+                 <th style="cursor: pointer" ng-click="orderByMe('fimAnuncio')">Fim do anuncio</th>
+                 <th >Descricao</th>
+                 <th >A&ccedil&otildees</th>      
+                </tr>
+                <tr ng-repeat="aluguel in alugueis | orderBy:myOrderBy | filter:filtro">
+                    <td>{{aluguel.identifier}}</td>
+                    <td>{{aluguel.fimAnuncio | date:' dd/MM/yyyy'}}</td>
+                    <td>{{aluguel.descricao}}</td>
+                    <td><button ng-click="editar(aluguel)">Editar</button>
+                    <button ng-click="deletar(aluguel)">Deletar</button>
+                    </td>               
+                </tr>
+            </table>
+        </div>
+</div>

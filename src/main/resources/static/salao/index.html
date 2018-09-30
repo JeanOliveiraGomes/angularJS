@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset-utf-8">
+<title>Sistema Aluguel Salão de Festas</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+<script src="../salao/js/app.js"></script>
+<script src="../salao/js/controllers.js"></script>
+<script src="../salao/js/controller/aluguelController.js"></script>
+<style>
+    .nav{border-radius: 0;}
+</style>
+</head>
+<body ng-app="myApp">   
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a  class="navbar-brand">Sistema Aluguel Salão de Festas</a>
+        </div>
+
+        <ul class="nav navbar-nav ">
+            <li><a ui-sref="inicio">Inicio</a></li>
+            <li><a ui-sref="alugueis">Alugueis</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
+</body>
+</html>
